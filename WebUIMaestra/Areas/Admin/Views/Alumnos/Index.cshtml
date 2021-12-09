@@ -1,0 +1,18 @@
+﻿@model IEnumerable<WebUIMaestra.Models.Usuario>
+@{
+    Layout = "_AdminLayout";
+}
+<ul style="list-style:none;">
+    @foreach (var usuario in Model)
+    {    
+        <li>
+            <a href="~/Alumnos/Ver">@usuario.Nombre</a>
+            <a href="~/Admin/Alumnos/EditarAlumno/@usuario.Nombre.Replace(" ","-")">
+            <i class="fas fa-pen" style="color:black;text-align:end;"></i></a>
+            <a href="~/Admin/Alumnos/EliminarAlumno/@usuario.Nombre.Replace(" ","-")">
+            <i class="fas fa-trash" style="color:black; text-align:end;"></i></a>
+        </li>
+    }
+</ul>
+
+

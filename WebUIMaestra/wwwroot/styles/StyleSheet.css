@@ -1,0 +1,13 @@
+﻿*{
+    margin:0px 0px 0px 0px;
+    padding:0px 0px 0px 0px;
+}
+
+ul
+{
+    display:flex;
+}
+ul>li
+{
+    display:block;
+}

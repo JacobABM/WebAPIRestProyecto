@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppRestAPIPadreFamiliaUI.Views.TablaEvaluacion"
+             xmlns:dg="clr-namespace:Xamarin.Forms.DataGrid;assembly=Xamarin.Forms.DataGrid" 
+             xmlns:vm="clr-namespace:AppRestAPIPadreFamiliaUI.ViewModels">
+    <ContentPage.BindingContext>
+        <vm:AlumnoViewModel></vm:AlumnoViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <ContentView>
+            <dg:DataGrid ItemsSource="{Binding evaluaciones}">
+                <dg:DataGrid.Columns>
+                    <dg:DataGridColumn Title="Materia" PropertyName="Materia" Width="1*"></dg:DataGridColumn>
+                    <dg:DataGridColumn PropertyName="Alumno" Width="2*">
+                        <dg:DataGridColumn.FormattedTitle>
+                            <FormattedString>
+                                <Span Text="Alumno" FontSize="13" TextColor="white" FontAttributes="Bold"/>
+                            </FormattedString>
+                        </dg:DataGridColumn.FormattedTitle>
+                    </dg:DataGridColumn>
+                    <dg:DataGridColumn Title="PrimeraEvaluacion" PropertyName="PrimeraEvaluacion" Width="2*"/>
+                    <dg:DataGridColumn Title="SegundaEvaluacion" PropertyName="SegundaEvaluacion" Width="2*"/>
+                    <dg:DataGridColumn Title="TerceraEvaluacion" PropertyName="TerceraEvaluacion" Width="1*"/>
+                </dg:DataGrid.Columns>
+            </dg:DataGrid>
+        </ContentView>
+    </ContentPage.Content>
+    <StackLayout>
+        <Button Text="Desconectar" BackgroundColor="White" Clicked="Volver" TextColor="#04293A" VerticalOptions="EndAndExpand" HorizontalOptions="Center"></Button>
+    </StackLayout>
+</ContentPage>

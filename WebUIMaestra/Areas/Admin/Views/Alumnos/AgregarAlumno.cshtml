@@ -1,0 +1,12 @@
+﻿@model WebUIMaestra.Models.Usuario
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = "_AdminLayout";
+}
+
+<form action="~/Alumnos/AgregarAlumno" method="post">
+    <input type="text"  asp-for="Nombre"/>
+    <input type="text"  asp-for="Clave" />
+    <input type="submit" />
+</form>
+

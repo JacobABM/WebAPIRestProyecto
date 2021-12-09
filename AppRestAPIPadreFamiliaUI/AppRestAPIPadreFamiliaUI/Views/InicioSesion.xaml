@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:AppRestAPIPadreFamiliaUI.ViewModels"
+             x:Class="AppRestAPIPadreFamiliaUI.Views.Page1">
+    <ContentPage.BindingContext>
+        <vm:AlumnoViewModel></vm:AlumnoViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid>
+            <BoxView Color="#04293A"/>
+            <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+                <Image Source="icono.png" WidthRequest="100" HeightRequest="100" Margin="0,50,0,30"/>
+            </Grid>
+        <StackLayout Grid.Row="1" Padding="30,20">
+            <Label Text="Iniciar Sesion" VerticalOptions="CenterAndExpand"  HorizontalOptions="CenterAndExpand" />
+            <Entry HorizontalOptions="Center" Text="{Binding Nombre}" Placeholder="Nombre de Usuario" PlaceholderColor="white"></Entry>
+            <Entry IsPassword="True" Text="{Binding Clave}" Placeholder="Contraseña" PlaceholderColor="White"></Entry>
+                <Button Text="Enviar" BackgroundColor="White" BorderRadius="20" TextColor="#04293A"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center"
+                Command="{Binding EnviarUsuarioCommand}" Clicked="ir" />
+        </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
